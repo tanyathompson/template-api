@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import pool from "./config/db.js";
+import testRoutes from "./routes/testRoutes.js";
 
 dotenv.config()
 
@@ -14,9 +15,10 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+app.use("/api", testRoutes);
 
 // Error handling
-
+app.use(errorHandling);
 
 // Testing db connection
 app.get("/", async (req, res) => {
