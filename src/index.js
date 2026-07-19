@@ -3,6 +3,8 @@ import cors from "cors"
 import dotenv from "dotenv"
 import pool from "./config/db.js";
 import testRoutes from "./routes/testRoutes.js";
+import errorHandling from "./middleware/errorHandler.js";
+import createItemTable from "./data/createItemTable.js";
 
 dotenv.config()
 
@@ -19,6 +21,9 @@ app.use("/api", testRoutes);
 
 // Error handling
 app.use(errorHandling);
+
+// Create table before server start
+createItemTable();
 
 // Testing db connection
 app.get("/", async (req, res) => {
