@@ -12,7 +12,7 @@
     "url": "git+https://github.com/tanyathompson/template-api.git"
   },
   "keywords": [],
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/tanyathompson/template-api/issues"
   },
